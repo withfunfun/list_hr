@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .test{width: 700px;}
+        .test a{
+            
+            display: inline-flex;
+            width: 200px;
+        }
+        hr{border-bottom:1px solid #eee;}
+    </style>
+    <div class="test">
+        <a href="#" alt="img1">문자1</a>
+        <a href="#" alt="img2">문자2</a>
+        <a href="#" alt="img3">문자3</a>
+        <a href="#" alt="img4">문자4</a>
+        <a href="#" alt="img5">문자5</a>
+        <a href="#" alt="img1">문자6</a>
+        <a href="#" alt="img2">문자7</a>
+        <a href="#" alt="img3">문자8</a>
+        <a href="#" alt="img4">문자9</a>
+        <a href="#" alt="img5">문자10</a>
+        <a href="#" alt="img1">문자11</a>
+        <a href="#" alt="img2">문자12</a>
+        <a href="#" alt="img3">문자13</a> 
+        <a href="#" alt="img3">문자14</a>
+        <a href="#" alt="img3">문자15</a>
+    </div>
+<script>
+    let itemList = document.querySelector('.test');
+    let item = itemList.getElementsByTagName("a");
+    let itemLen = item.length;
+
+    let line1 = document.createElement("hr");
+    let line2 = document.createElement("hr");
+    let line3 = document.createElement("hr");
+    let line4 = document.createElement("hr");
+    let line5 = document.createElement("hr");
+    
+
+    console.log(itemLen);
+
+    if (itemLen > 0){    
+        
+        if(item[2]){
+            item[2].after(line1);
+        }
+        if(item[5]){
+            item[5].after(line2);
+        }
+        if(item[8]){
+            item[8].after(line3);
+        }
+        if(item[11]){
+            item[11].after(line4);
+        }
+        if(item[14]){
+            item[14].after(line5);
+        }
+
+        console.log(itemLen);
+        
+    }else{
+        itemList.innerHTML = `
+        <div class='box'>
+            <span>아이콘</span><br>
+            없어요
+        </div>
+    `;
+    }
+
+
+    
+
+    
+    
+
+</script>
+</body>
+</html>
